@@ -18,7 +18,7 @@ class AuthController extends Controller
     {
         return request()
             ->user()
-            ->load('userType.moduleActions');
+            ->load('userType.moduleActions', 'branch');
     }
 
     /**
@@ -142,8 +142,7 @@ class AuthController extends Controller
         return response()
             ->json(
                 [
-                    'message' => __('auth.received'),
-                    'user' => $user,
+                    'user' => $this->user(),
                     'accessToken' => $accessToken
                 ]
             );
