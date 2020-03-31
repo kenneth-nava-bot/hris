@@ -28,7 +28,10 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'user_type_id.required' => 'User type field is required.'
+            'user_type_id.required' => 'User type field is required.',
+            'branch_id.required' => 'Branch field is required.',
+            'user_type_id.exists' => 'Selected User type field is invalid.',
+            'branch_id.exists' => 'Selected Branch field is invalid.'
         ];
     }
 }

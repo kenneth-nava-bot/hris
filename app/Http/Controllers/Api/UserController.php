@@ -45,9 +45,9 @@ class UserController extends Controller
         $this->authorize('allows', [$this->module, 'create']);
 
         if($request->hasFile('avatar_file')) {
-          $avatar = $request->file('avatar_file')->store('avatars', 'public');
+          $avatar = $request->file('avatar_file')->store('public/avatars');
 
-          $request->merge(['avatar' => asset('storage/' . $avatar)]);
+          $request->merge(['avatar' => asset('storage/' + $avatar)]);
         }
 
         $rawPassword = Carbon::now()->timestamp;
