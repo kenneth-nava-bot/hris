@@ -16,6 +16,7 @@ class User extends Authenticatable implements Auditable
     use HasApiTokens, Notifiable, \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
+        'avatar',
         'user_type_id',
         'branch_id', 'name',
         'username',

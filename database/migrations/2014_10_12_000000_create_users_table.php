@@ -12,6 +12,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_type_id');
             $table->unsignedBigInteger('branch_id');
+            $table->string('avatar')->nullable();
             $table->string('name', 100);
             $table->string('username', 100)->unique()->collation('latin1_general_cs');
             $table->string('email', 100)->unique()->collation('latin1_general_cs');
